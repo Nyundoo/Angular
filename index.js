@@ -1,7 +1,6 @@
 // Get dependencies
 const express = require('express');
 const path = require('path');
-const http = require('http');
 const bodyParser = require('body-parser');
 const winston = require('winston');
 
@@ -29,3 +28,11 @@ app.get('*', (req, res) => {
 
  const port = process.env.PORT || 4000;
  const server = app.listen(port, () => winston.info(`Listening to requests on port ${port}...`));
+
+
+
+
+
+
+
+ 
