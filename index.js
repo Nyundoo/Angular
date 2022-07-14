@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const winston = require('winston');
 
 // Get our API routes
 
@@ -23,17 +24,8 @@ app.get('*', (req, res) => {
 });
 
 /**
- * Get port from environment and store in Express.
- */
-const port = process.env.PORT || '3000';
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-const server = http.createServer(app);
-
-/**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+
+ const port = process.env.PORT || 4000;
+ const server = app.listen(port, () => winston.info(`Listening to requests on port ${port}...`));
